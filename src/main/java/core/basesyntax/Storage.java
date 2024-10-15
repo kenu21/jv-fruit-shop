@@ -16,10 +16,17 @@ public class Storage {
     }
 
     public void reduceFruitQuantity(String fruit, int quantity) {
-        fruits.put(fruit, fruits.getOrDefault(fruit, 0) - quantity);
+        int currentQuantity = fruits.getOrDefault(fruit, 0);
+        int newQuantity = currentQuantity - quantity;
+
+        if (newQuantity < 0) {
+            throw new RuntimeException("Insufficient quantity of " + fruit + ". Current balance: "
+                + currentQuantity + ", requested: " + quantity);
+        }
+        fruits.put(fruit, newQuantity);
     }
 
     public Map<String, Integer> getAllFruits() {
-        return fruits;
+        return new HashMap<>(fruits);
     }
 }

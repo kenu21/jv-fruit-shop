@@ -12,6 +12,7 @@ import core.basesyntax.operations.OperationStrategyImpl;
 import core.basesyntax.operations.PurchaseOperation;
 import core.basesyntax.operations.ReturnOperation;
 import core.basesyntax.operations.SupplyOperation;
+import core.basesyntax.service.impl.ReportGeneratorImpl;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
